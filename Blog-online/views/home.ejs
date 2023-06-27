@@ -1,0 +1,33 @@
+<%- include("header"); -%>
+  <div class="blog">
+    <div class="container ">
+      <div class="jumbotron p-3 p-md-5 text-white rounded">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 ab">Title of a longer featured blog post</h1>
+          <p class="lead my-3 ab">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+        </div>
+      </div>
+
+      <%       posts.forEach(function(post){ %>
+      <div class="col-md-12 ">
+        <div class="card flex-md-row mb-4 box-shadow  abc">
+          <div class="card-body d-flex flex-column align-items-start abc">
+            <br>
+            <h2 class="mb-0">
+              <strong class="d-inline-block mb-2  cd "><%=post.title%></strong>
+            </h2>
+            <br>
+            <p class="card-text mb-auto "><%=post.content.substring(0,50)%></p>
+            <p><a class="cd" href="/read/<%=post._id%>">Continue reading</a></p>
+            <p><a class="cd" href="/delete/<%=post._id%>">Delete</a></p>
+          </div>
+          <img class="card-img-right flex-auto d-none d-md-block pad" src="<%=post.imageURL%>" alt="Card image cap">
+        </div>
+      </div>
+      <% }) %>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
